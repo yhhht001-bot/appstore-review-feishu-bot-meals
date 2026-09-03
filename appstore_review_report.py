@@ -710,15 +710,14 @@ def group_changes_by_app(changes: list[dict[str, Any]]) -> list[tuple[str, list[
 
 def entity_label(item: dict[str, str]) -> str:
     entity_type = item.get("entity_type", "")
-    app_name = item.get("app_name", "-")
     if entity_type == "APP_VERSION":
-        return f"[{app_name}] 版本：{item.get('name', '-')}"
+        return f"版本：{item.get('name', '-')}"
     if entity_type == "CPP":
-        return f"[{app_name}] CPP：{item.get('name', '-')} | v{item.get('version', '-')}"
+        return f"CPP：{item.get('name', '-')} | v{item.get('version', '-')}"
     if entity_type == "IAE":
-        return f"[{app_name}] IAE：{item.get('name', '-')}"
+        return f"IAE：{item.get('name', '-')}"
     if entity_type == "GOOGLE_PLAY_RELEASE":
-        return f"[{app_name}] Google Play：{item.get('name', '-')} | {item.get('track', '-')} | {item.get('version', '-')}"
+        return f"Google Play：{item.get('name', '-')} | {item.get('track', '-')} | {item.get('version', '-')}"
     return f"对象：{item_label(item)}"
 
 
@@ -792,11 +791,9 @@ def build_report_rows(settings: Settings, changes: list[dict[str, Any]]) -> list
             if not platform_changes:
                 continue
             rows.append([rich_text(f"【{platform}】", bold=True)])
-            for app_name, app_changes in group_changes_by_app(platform_changes):
-                rows.append([rich_text(app_name, bold=True)])
-                for change in sorted(app_changes, key=change_sort_key):
-                    for line in render_change_lines(change):
-                        rows.append([rich_text(line)])
+            for change in platform_changes:
+                for line in render_change_lines(change):
+                    rows.append([rich_text(line)])
 
     return rows
 
@@ -815,11 +812,9 @@ def build_snapshot_rows(settings: Settings, items: list[dict[str, str]]) -> list
             if not platform_items:
                 continue
             rows.append([rich_text(f"【{platform}】", bold=True)])
-            for app_name, app_items in group_items_by_app(platform_items):
-                rows.append([rich_text(app_name, bold=True)])
-                for item in sorted(app_items, key=item_sort_key):
-                    for line in render_item_lines(item):
-                        rows.append([rich_text(line)])
+            for item in platform_items:
+                for line in render_item_lines(item):
+                    rows.append([rich_text(line)])
 
     return rows
 

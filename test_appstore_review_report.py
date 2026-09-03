@@ -162,7 +162,7 @@ class CollectReviewItemsTests(unittest.TestCase):
 
 
 class MessageGroupingTests(unittest.TestCase):
-    def test_build_report_rows_groups_changes_by_app_within_platform(self) -> None:
+    def test_build_report_rows_matches_taichi_message_format(self) -> None:
         settings = report.Settings(
             asc_issuer_id="issuer",
             asc_key_id="key",
@@ -197,12 +197,10 @@ class MessageGroupingTests(unittest.TestCase):
             [
                 "Chair Yoga & Tai Chi Walking / Other App",
                 "【IOS】",
-                "Chair Yoga & Tai Chi Walking",
-                "[Chair Yoga & Tai Chi Walking] 版本：1.0.0",
+                "版本：1.0.0",
                 "旧状态：待开发者发布",
                 "新状态：可销售 / 可分发",
-                "Other App",
-                "[Other App] IAE：Challenge12",
+                "IAE：Challenge12",
                 "旧状态：已通过",
                 "新状态：已发布",
             ],
@@ -252,8 +250,7 @@ class MessageGroupingTests(unittest.TestCase):
             [
                 "Chair Yoga",
                 "【ANDROID】",
-                "Chair Yoga",
-                "[Chair Yoga] Google Play：1.2.3 | production | 123",
+                "Google Play：1.2.3 | production | 123",
                 "新状态：已发布",
             ],
         )
