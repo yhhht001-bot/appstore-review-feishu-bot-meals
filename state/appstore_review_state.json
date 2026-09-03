@@ -1,0 +1,25 @@
+{
+  "items": {
+    "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
+      "app_id": "6801429174",
+      "app_name": "Meals for Seniors, Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "951fccfb-f8db-44ba-bde7-dadf95ea6c41",
+      "entity_type": "APP_VERSION",
+      "name": "1.0.0",
+      "platform": "IOS",
+      "state": "READY_FOR_SALE / READY_FOR_DISTRIBUTION"
+    },
+    "APP_VERSION:d15458a7-1ed4-4507-87f7-0d562c272490": {
+      "app_id": "6801429174",
+      "app_name": "Meals for Seniors, Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "d15458a7-1ed4-4507-87f7-0d562c272490",
+      "entity_type": "APP_VERSION",
+      "name": "1.0.1",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    }
+  },
+  "updated_at": "2026-09-03T10:03:21.137070+00:00"
+}
