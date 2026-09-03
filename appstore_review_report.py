@@ -900,7 +900,9 @@ def main() -> int:
         if settings.send_current_snapshot:
             current_items = sandbox_review_items() if settings.sandbox_mode else collect_review_items(settings)
             state_path = Path(settings.state_file_path)
-            payload = build_snapshot_payload(settings, current_items)
+            # Render the manual snapshot with the same change-message format as the scheduled report.
+            changes = [build_change(None, item) for item in current_items]
+            payload = build_feishu_payload(settings, changes)
             result = send_to_feishu(settings, payload)
             save_snapshot(state_path, current_items)
             print(
