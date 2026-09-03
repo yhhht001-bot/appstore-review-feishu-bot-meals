@@ -71,6 +71,9 @@ Apple / Google Play 这类状态并不能直接把所有变化主动推送到 Gi
 - `GPLAY_PACKAGE_NAMES` 填要监听的 Android package name，多个用逗号分隔
 - `FEISHU_SECRET`、`FEISHU_KEYWORD` 没开就留空
 
+在 GitHub Actions 中手动运行 `Meals App Store Review Report` 时，将
+`send_current_snapshot` 选择为 `true`，可立即发送当前 iOS/Android 审核状态概览。
+
 ## 本地测试
 
 先复制环境变量模板：
@@ -118,6 +121,7 @@ SANDBOX_MODE=true python appstore_review_report.py
 - `GPLAY_PACKAGE_NAMES`
 - `STATE_FILE_PATH`
 - `SEND_GOOGLE_PLAY_SNAPSHOT`
+- `SEND_CURRENT_SNAPSHOT`
 - `SANDBOX_MODE`
 
 其中：

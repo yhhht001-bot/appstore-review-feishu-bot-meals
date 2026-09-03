@@ -5,6 +5,14 @@ on:
     - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
+      send_current_snapshot:
+        description: "立即发送当前 App 审核状态"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
       send_google_play_snapshot:
         description: "立即发送当前 Google Play 审核状态"
         required: false
@@ -69,6 +77,7 @@ jobs:
           FEISHU_KEYWORD: ${{ secrets.FEISHU_KEYWORD }}
           ASC_APP_IDS: ${{ secrets.ASC_APP_IDS }}
           STATE_FILE_PATH: ./.state/appstore_review_state.json
+          SEND_CURRENT_SNAPSHOT: ${{ github.event.inputs.send_current_snapshot || 'false' }}
           SEND_GOOGLE_PLAY_SNAPSHOT: ${{ github.event.inputs.send_google_play_snapshot || 'false' }}
         run: python appstore_review_report.py
 

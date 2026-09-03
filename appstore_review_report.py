@@ -87,6 +87,7 @@ class Settings:
     state_file_path: str
     sandbox_mode: bool
     send_google_play_snapshot: bool
+    send_current_snapshot: bool = False
 
 
 def load_dotenv_if_present(path: Path) -> None:
@@ -142,6 +143,7 @@ def load_settings() -> Settings:
         state_file_path=os.getenv("STATE_FILE_PATH", "./.state/appstore_review_state.json").strip(),
         sandbox_mode=sandbox_mode,
         send_google_play_snapshot=bool_env("SEND_GOOGLE_PLAY_SNAPSHOT", False),
+        send_current_snapshot=bool_env("SEND_CURRENT_SNAPSHOT", False),
     )
 
 
@@ -894,6 +896,27 @@ def main() -> int:
     try:
         load_dotenv_if_present(Path(".env"))
         settings = load_settings()
+
+        if settings.send_current_snapshot:
+            current_items = sandbox_review_items() if settings.sandbox_mode else collect_review_items(settings)
+            state_path = Path(settings.state_file_path)
+            payload = build_snapshot_payload(settings, current_items)
+            result = send_to_feishu(settings, payload)
+            save_snapshot(state_path, current_items)
+            print(
+                json.dumps(
+                    {
+                        "status": "ok",
+                        "sandbox_mode": settings.sandbox_mode,
+                        "message": "已发送当前审核状态概览",
+                        "tracked_count": len(current_items),
+                        "state_file_path": settings.state_file_path,
+                        "feishu": result,
+                    },
+                    ensure_ascii=False,
+                )
+            )
+            return 0
 
         if settings.send_google_play_snapshot:
             current_items = sandbox_review_items() if settings.sandbox_mode else collect_google_play_items(settings)
