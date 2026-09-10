@@ -1,5 +1,15 @@
 {
   "items": {
+    "APP_VERSION:1b83d1be-cbab-49a5-a19a-89b9068eec22": {
+      "app_id": "6801429174",
+      "app_name": "Recipes for Seniors, Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "1b83d1be-cbab-49a5-a19a-89b9068eec22",
+      "entity_type": "APP_VERSION",
+      "name": "1.0.2",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    },
     "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
       "app_id": "6801429174",
       "app_name": "Recipes for Seniors, Orienna",
@@ -19,7 +29,17 @@
       "name": "1.0.1",
       "platform": "IOS",
       "state": "READY_FOR_SALE / READY_FOR_DISTRIBUTION"
+    },
+    "IAE:6810605100": {
+      "app_id": "6801429174",
+      "app_name": "Recipes for Seniors, Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "6810605100",
+      "entity_type": "IAE",
+      "name": "15-Minute Meal Challenge",
+      "platform": "IOS",
+      "state": "IN_REVIEW"
     }
   },
-  "updated_at": "2026-09-09T23:29:22.729733+00:00"
+  "updated_at": "2026-09-10T12:12:33.012098+00:00"
 }
