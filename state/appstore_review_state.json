@@ -50,6 +50,16 @@
       "platform": "IOS",
       "state": "READY_FOR_SALE / READY_FOR_DISTRIBUTION"
     },
+    "APP_VERSION:fab288c3-b170-4106-b486-475bcc3ce17f": {
+      "app_id": "6801429174",
+      "app_name": "Recipes for Seniors, Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "fab288c3-b170-4106-b486-475bcc3ce17f",
+      "entity_type": "APP_VERSION",
+      "name": "1.0.3",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    },
     "IAE:6810605100": {
       "app_id": "6801429174",
       "app_name": "Recipes for Seniors, Orienna",
@@ -71,5 +81,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-09-17T00:29:52.762123+00:00"
+  "updated_at": "2026-09-17T10:23:49.556122+00:00"
 }
