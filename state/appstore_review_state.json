@@ -58,7 +58,7 @@
       "entity_type": "APP_VERSION",
       "name": "1.0.3",
       "platform": "IOS",
-      "state": "WAITING_FOR_REVIEW"
+      "state": "IN_REVIEW"
     },
     "IAE:6810605100": {
       "app_id": "6801429174",
@@ -81,5 +81,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-09-18T11:06:50.788864+00:00"
+  "updated_at": "2026-09-18T21:13:03.466309+00:00"
 }
