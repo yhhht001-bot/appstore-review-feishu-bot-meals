@@ -30,6 +30,16 @@
       "platform": "IOS",
       "state": "READY_FOR_SALE / READY_FOR_DISTRIBUTION"
     },
+    "APP_VERSION:884655b8-624b-49a6-83a6-cd34ca5f790f": {
+      "app_id": "6781187409",
+      "app_name": "AI Help for Seniors, Ollie",
+      "bundle_id": "com.aisupport.senior.ollie",
+      "entity_id": "884655b8-624b-49a6-83a6-cd34ca5f790f",
+      "entity_type": "APP_VERSION",
+      "name": "1.1.1",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    },
     "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
       "app_id": "6801429174",
       "app_name": "Recipes for Seniors, Orienna",
@@ -101,5 +111,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-09-22T07:39:49.611891+00:00"
+  "updated_at": "2026-10-08T07:16:51.713403+00:00"
 }
