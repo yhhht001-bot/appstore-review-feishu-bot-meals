@@ -2,7 +2,7 @@
   "items": {
     "APP_VERSION:1b83d1be-cbab-49a5-a19a-89b9068eec22": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "1b83d1be-cbab-49a5-a19a-89b9068eec22",
       "entity_type": "APP_VERSION",
@@ -12,13 +12,13 @@
     },
     "APP_VERSION:612935e5-c63a-4832-b7f6-c91955645d6c": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "612935e5-c63a-4832-b7f6-c91955645d6c",
       "entity_type": "APP_VERSION",
       "name": "1.0.4",
       "platform": "IOS",
-      "state": "PREPARE_FOR_SUBMISSION"
+      "state": "WAITING_FOR_REVIEW"
     },
     "APP_VERSION:8444b4fb-3554-42bb-ae26-1407f8667459": {
       "app_id": "6781187409",
@@ -42,7 +42,7 @@
     },
     "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "951fccfb-f8db-44ba-bde7-dadf95ea6c41",
       "entity_type": "APP_VERSION",
@@ -62,7 +62,7 @@
     },
     "APP_VERSION:d15458a7-1ed4-4507-87f7-0d562c272490": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "d15458a7-1ed4-4507-87f7-0d562c272490",
       "entity_type": "APP_VERSION",
@@ -82,7 +82,7 @@
     },
     "APP_VERSION:fab288c3-b170-4106-b486-475bcc3ce17f": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "fab288c3-b170-4106-b486-475bcc3ce17f",
       "entity_type": "APP_VERSION",
@@ -92,7 +92,7 @@
     },
     "IAE:6810605100": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "6810605100",
       "entity_type": "IAE",
@@ -102,7 +102,7 @@
     },
     "IAE:6811849051": {
       "app_id": "6801429174",
-      "app_name": "Recipes for Seniors, Orienna",
+      "app_name": "Recipe & Meal Planner, Orienna",
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "6811849051",
       "entity_type": "IAE",
@@ -111,5 +111,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-10-08T07:16:51.713403+00:00"
+  "updated_at": "2026-10-08T14:54:00.501885+00:00"
 }
