@@ -98,7 +98,7 @@
       "entity_type": "IAE",
       "name": "15-Minute Meal Challenge",
       "platform": "IOS",
-      "state": "PUBLISHED"
+      "state": "PAST"
     },
     "IAE:6811849051": {
       "app_id": "6801429174",
@@ -111,5 +111,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-10-08T20:40:08.947490+00:00"
+  "updated_at": "2026-10-25T14:20:58.037997+00:00"
 }
