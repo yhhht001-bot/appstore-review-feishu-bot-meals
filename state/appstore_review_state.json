@@ -28,7 +28,7 @@
       "entity_type": "APP_VERSION",
       "name": "1.0.0",
       "platform": "IOS",
-      "state": "PREPARE_FOR_SUBMISSION"
+      "state": "WAITING_FOR_REVIEW"
     },
     "APP_VERSION:612935e5-c63a-4832-b7f6-c91955645d6c": {
       "app_id": "6801429174",
@@ -138,8 +138,8 @@
       "entity_type": "IAE",
       "name": "Personalized Meal Match",
       "platform": "IOS",
-      "state": "PUBLISHED"
+      "state": "PAST"
     }
   },
-  "updated_at": "2026-10-29T09:50:30.564648+00:00"
+  "updated_at": "2026-10-29T16:52:47.379937+00:00"
 }
