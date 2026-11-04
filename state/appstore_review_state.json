@@ -60,6 +60,16 @@
       "platform": "IOS",
       "state": "PREPARE_FOR_SUBMISSION"
     },
+    "APP_VERSION:8c513af7-cb94-45b5-a83f-6f7270c09d1f": {
+      "app_id": "6801429174",
+      "app_name": "Recipes & Meal Planner,Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "8c513af7-cb94-45b5-a83f-6f7270c09d1f",
+      "entity_type": "APP_VERSION",
+      "name": "1.0.7",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    },
     "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
       "app_id": "6801429174",
       "app_name": "Recipes & Meal Planner,Orienna",
@@ -141,5 +151,5 @@
       "state": "PAST"
     }
   },
-  "updated_at": "2026-11-04T11:30:49.095961+00:00"
+  "updated_at": "2026-11-04T18:51:15.368486+00:00"
 }
