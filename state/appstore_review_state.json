@@ -66,9 +66,9 @@
       "bundle_id": "com.meals.senior.orienna",
       "entity_id": "8c513af7-cb94-45b5-a83f-6f7270c09d1f",
       "entity_type": "APP_VERSION",
-      "name": "1.0.7",
+      "name": "1.1.0",
       "platform": "IOS",
-      "state": "PREPARE_FOR_SUBMISSION"
+      "state": "WAITING_FOR_REVIEW"
     },
     "APP_VERSION:951fccfb-f8db-44ba-bde7-dadf95ea6c41": {
       "app_id": "6801429174",
@@ -151,5 +151,5 @@
       "state": "PAST"
     }
   },
-  "updated_at": "2026-11-09T09:39:42.672003+00:00"
+  "updated_at": "2026-11-10T11:43:08.044941+00:00"
 }
