@@ -100,6 +100,16 @@
       "platform": "IOS",
       "state": "READY_FOR_SALE / READY_FOR_DISTRIBUTION"
     },
+    "APP_VERSION:b9b4a0b7-4b70-414c-aefe-fb1b2858ded0": {
+      "app_id": "6801429174",
+      "app_name": "Recipes & Meal Planner,Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "b9b4a0b7-4b70-414c-aefe-fb1b2858ded0",
+      "entity_type": "APP_VERSION",
+      "name": "1.1.2",
+      "platform": "IOS",
+      "state": "PREPARE_FOR_SUBMISSION"
+    },
     "APP_VERSION:d15458a7-1ed4-4507-87f7-0d562c272490": {
       "app_id": "6801429174",
       "app_name": "Recipes & Meal Planner,Orienna",
@@ -159,7 +169,17 @@
       "name": "Personalized Meal Match",
       "platform": "IOS",
       "state": "PAST"
+    },
+    "IAE:6836766241": {
+      "app_id": "6801429174",
+      "app_name": "Recipes & Meal Planner,Orienna",
+      "bundle_id": "com.meals.senior.orienna",
+      "entity_id": "6836766241",
+      "entity_type": "IAE",
+      "name": "Easy Home Cooking Journey 20261121",
+      "platform": "IOS",
+      "state": "WAITING_FOR_REVIEW"
     }
   },
-  "updated_at": "2026-11-16T18:24:14.930761+00:00"
+  "updated_at": "2026-11-19T18:38:16.213394+00:00"
 }
