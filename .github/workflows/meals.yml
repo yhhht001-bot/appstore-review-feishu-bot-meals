@@ -78,6 +78,7 @@ jobs:
           FEISHU_KEYWORD: ${{ secrets.FEISHU_KEYWORD }}
           ASC_APP_IDS: ${{ secrets.ASC_APP_IDS }}
           STATE_FILE_PATH: ./.state/appstore_review_state.json
+          NOTIFY_ENTITY_TYPES: APP_VERSION
           SEND_CURRENT_SNAPSHOT: ${{ github.event.inputs.send_current_snapshot || 'false' }}
           SEND_GOOGLE_PLAY_SNAPSHOT: ${{ github.event.inputs.send_google_play_snapshot || 'false' }}
         run: python appstore_review_report.py

@@ -11,6 +11,8 @@
 - IAE（In-App Events，App 内活动）审核状态
 - Google Play 正式轨道版本发布状态
 
+消息发送默认只保留 App 版本审核状态，IAE、CPP 和 Google Play 状态仍会采集并保存到快照，但不会发送飞书消息。
+
 ## 运行逻辑
 
 1. 使用 App Store Connect API Key 生成 JWT
@@ -42,7 +44,7 @@ Apple / Google Play 这类状态并不能直接把所有变化主动推送到 Gi
 
 第一次运行时，脚本会先建立一份状态快照，不发送消息。
 
-从第二次开始，只要版本、CPP、IAE 或 Google Play 正式轨道状态发生变化，就会立刻在下一次轮询时发送。
+从第二次开始，只要启用通知类型的状态发生变化，就会立刻在下一次轮询时发送。默认只发送 App 版本审核状态变化。
 
 ## 需要配置的 GitHub Secrets
 
@@ -122,11 +124,13 @@ SANDBOX_MODE=true python appstore_review_report.py
 - `STATE_FILE_PATH`
 - `SEND_GOOGLE_PLAY_SNAPSHOT`
 - `SEND_CURRENT_SNAPSHOT`
+- `NOTIFY_ENTITY_TYPES`
 - `SANDBOX_MODE`
 
 其中：
 
 - `STATE_FILE_PATH` 默认是 `./.state/appstore_review_state.json`
+- `NOTIFY_ENTITY_TYPES` 默认是 `APP_VERSION`，只发送 App 版本审核消息。可用逗号分隔的实体类型扩展发送范围。
 
 ## 飞书消息示例
 

@@ -88,6 +88,7 @@ class Settings:
     sandbox_mode: bool
     send_google_play_snapshot: bool
     send_current_snapshot: bool = False
+    notify_entity_types: tuple[str, ...] = ("APP_VERSION",)
 
 
 def load_dotenv_if_present(path: Path) -> None:
@@ -144,6 +145,7 @@ def load_settings() -> Settings:
         sandbox_mode=sandbox_mode,
         send_google_play_snapshot=bool_env("SEND_GOOGLE_PLAY_SNAPSHOT", False),
         send_current_snapshot=bool_env("SEND_CURRENT_SNAPSHOT", False),
+        notify_entity_types=csv_env("NOTIFY_ENTITY_TYPES", "APP_VERSION"),
     )
 
 
@@ -614,6 +616,20 @@ def build_report_title() -> str:
     return f"App审核信息 {now}"
 
 
+def filter_items_for_notification(settings: Settings, items: list[dict[str, str]]) -> list[dict[str, str]]:
+    allowed_types = set(settings.notify_entity_types)
+    return [item for item in items if item.get("entity_type") in allowed_types]
+
+
+def filter_changes_for_notification(settings: Settings, changes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    allowed_types = set(settings.notify_entity_types)
+    return [
+        change
+        for change in changes
+        if (change.get("current") or change.get("previous") or {}).get("entity_type") in allowed_types
+    ]
+
+
 def build_snapshot_title() -> str:
     now = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     return f"App审核信息概览 {now}"
@@ -895,9 +911,12 @@ def main() -> int:
         if settings.send_current_snapshot:
             current_items = sandbox_review_items() if settings.sandbox_mode else collect_review_items(settings)
             state_path = Path(settings.state_file_path)
-            # Render the manual snapshot with the same change-message format as the scheduled report.
-            changes = [build_change(None, item) for item in current_items]
-            payload = build_feishu_payload(settings, changes)
+            notification_items = filter_items_for_notification(settings, current_items)
+            if not notification_items:
+                save_snapshot(state_path, current_items)
+                print(json.dumps({"status": "ok", "message": "当前没有启用的通知类型，已跳过发送"}, ensure_ascii=False))
+                return 0
+            payload = build_snapshot_payload(settings, notification_items)
             result = send_to_feishu(settings, payload)
             save_snapshot(state_path, current_items)
             print(
@@ -917,7 +936,11 @@ def main() -> int:
 
         if settings.send_google_play_snapshot:
             current_items = sandbox_review_items() if settings.sandbox_mode else collect_google_play_items(settings)
-            payload = build_google_play_snapshot_payload(settings, current_items)
+            notification_items = filter_items_for_notification(settings, current_items)
+            if not notification_items:
+                print(json.dumps({"status": "ok", "message": "Google Play 不在当前启用的通知类型中，已跳过发送"}, ensure_ascii=False))
+                return 0
+            payload = build_google_play_snapshot_payload(settings, notification_items)
             result = send_to_feishu(settings, payload)
             print(
                 json.dumps(
@@ -954,13 +977,16 @@ def main() -> int:
             return 0
 
         changes = diff_snapshots(previous_items, current_items)
-        if not changes:
+        notification_changes = filter_changes_for_notification(settings, changes)
+        if not notification_changes:
+            save_snapshot(state_path, current_items)
             print(
                 json.dumps(
                     {
                         "status": "ok",
                         "sandbox_mode": settings.sandbox_mode,
-                        "message": "未检测到审核状态变化，已跳过发送",
+                        "message": "未检测到启用通知类型的审核状态变化，已跳过发送",
+                        "change_count": len(notification_changes),
                         "tracked_count": len(current_items),
                         "state_file_path": settings.state_file_path,
                     },
@@ -969,7 +995,7 @@ def main() -> int:
             )
             return 0
 
-        payload = build_feishu_payload(settings, changes)
+        payload = build_feishu_payload(settings, notification_changes)
         result = send_to_feishu(settings, payload)
         save_snapshot(state_path, current_items)
         print(
@@ -978,7 +1004,7 @@ def main() -> int:
                     "status": "ok",
                     "sandbox_mode": settings.sandbox_mode,
                     "message": "检测到状态变化并已发送",
-                    "change_count": len(changes),
+                    "change_count": len(notification_changes),
                     "tracked_count": len(current_items),
                     "state_file_path": settings.state_file_path,
                     "feishu": result,
