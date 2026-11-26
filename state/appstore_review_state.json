@@ -179,7 +179,17 @@
       "name": "Easy Home Cooking Journey 20261121",
       "platform": "IOS",
       "state": "PUBLISHED"
+    },
+    "IAE:6839459114": {
+      "app_id": "6827501881",
+      "app_name": "Toddler Parenting, Parentice",
+      "bundle_id": "com.parenting.help.parentice",
+      "entity_id": "6839459114",
+      "entity_type": "IAE",
+      "name": "Parentice Black Friday Practice V1",
+      "platform": "IOS",
+      "state": "APPROVED"
     }
   },
-  "updated_at": "2026-11-25T23:16:28.440121+00:00"
+  "updated_at": "2026-11-26T05:25:02.120969+00:00"
 }
