@@ -88,7 +88,7 @@
       "entity_type": "APP_VERSION",
       "name": "1.0.1",
       "platform": "IOS",
-      "state": "PREPARE_FOR_SUBMISSION"
+      "state": "WAITING_FOR_REVIEW"
     },
     "APP_VERSION:a9365364-59da-4215-b020-d8226304da8d": {
       "app_id": "6801429174",
@@ -201,5 +201,5 @@
       "state": "PUBLISHED"
     }
   },
-  "updated_at": "2026-11-27T00:31:39.461276+00:00"
+  "updated_at": "2026-11-27T09:01:23.611198+00:00"
 }
